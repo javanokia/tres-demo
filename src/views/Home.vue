@@ -101,8 +101,32 @@ onMounted(() => {
       <header>
         <h1>TresJS Demo</h1>
         <p class="subtitle">基于 Vue 3 + TresJS 的 3D 演示项目</p>
+        
+        <div class="intro-section">
+          <div class="feature-card">
+            <h3>项目特点</h3>
+            <ul>
+              <li>🚀 基于 Vue 3 + TypeScript + Vite</li>
+              <li>📦 使用 TresJS 快速构建 3D 场景</li>
+              <li>🎨 支持模型加载、纹理映射</li>
+              <li>✨ 自定义着色器效果展示</li>
+              <li>🔧 完整的示例代码和文档</li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <h3>技术栈</h3>
+            <ul>
+              <li>💚 Vue 3 组合式 API</li>
+              <li>🔷 TypeScript 类型支持</li>
+              <li>⚡️ Vite 构建工具</li>
+              <li>🎮 TresJS 3D 渲染</li>
+              <li>🎨 自定义着色器</li>
+            </ul>
+          </div>
+        </div>
       </header>
 
+      <h2 class="demos-title">示例演示</h2>
       <main class="demo-grid">
         <div v-for="item in menuItems" :key="item.path" class="demo-card" @click="navigateTo(item.path)">
           <div class="card-content">
@@ -151,6 +175,50 @@ h1 {
 .subtitle {
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.8);
+}
+
+.intro-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feature-card h3 {
+  color: #42b883;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.feature-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-card li {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0.8rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.demos-title {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  background: linear-gradient(45deg, #42b883, #35495e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .demo-grid {
@@ -239,6 +307,10 @@ h1 {
   }
 
   .demo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-section {
     grid-template-columns: 1fr;
   }
 }
